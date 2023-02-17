@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//整个项目的入口js文件
+import React from 'react'
+//旧版本引入react-dom
+// import ReactDOM from 'react-dom'
+//新版本
+import ReactDOM from 'react-dom/client'
 
+//引入组件类组件
+// import  APP from './01-base/01-class组件'
+
+// 引入函数组件
+// import APP from './01-base/02-函数式组件'
+
+//引入嵌套组价
+// import APP from './01-base/03-组件的嵌套'
+
+// 引入组价的样式
+// import APP from './01-base/04-组件的样式'
+
+//引入事件绑定
+// import APP from './01-base/06-事件绑定-2'
+
+//引入ref
+import APP from './01-base/07-ref'
+
+//这里是17.0.2 的写法
+// ReactDOM.render( < div > dom元素 < /div>,document.getElementById('root'))
+// 新版本18.2写法
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <APP />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//StrictMode    严格模式下
+
+//APP 根组件
