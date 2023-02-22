@@ -211,6 +211,7 @@ event.stopPropagatoin,evevt.preventDefault方法
 onClick事件，后面是否加(),如果onClick={()=>this.handle()}
 
 onClick={this.handle}
+//这里还是不懂
 
 我们写的时候，不要加小括号，react会自动加小括号执行他。包括箭头函数和上面的这个写法。
 
