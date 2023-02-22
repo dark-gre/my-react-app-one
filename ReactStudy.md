@@ -132,6 +132,62 @@ export default class APP extends Component {
 
 ![image-20230217175421841](C:\Users\codvision\AppData\Roaming\Typora\typora-user-images\image-20230217175421841.png)
 
+响应式设计
+
+#### 组件的数据挂载方式
+
+改变数据(状态改变)，页面就会更新，
+
+state={
+
+​	age : 1
+
+}
+
+this.steState({
+
+age :2
+
+})
+
+#### 渲染循环key值问题
+
+key=id，提高性能，用于虚拟dom时
+
+
+
+#### todolist
+
+有关...扩展运算符问题，深拷贝有局限性，只能拷贝一层，以及.slice().content也是同样能实现一层深拷贝，有局限性
+
+`var a = [1,2,3]`
+
+`let b= a.slice()`
+
+`a.push(4)`
+
+`console.log(b)`
+
+1，key的问题，会引起报错，唯一值
+
+2，浅拷贝，使用变量赋值时，这一步很重要
+
+3，{}map渲染到页面时，是不能渲染对象的，只能是obj.name这种
+
+
+
+边学边忘，我是服了，
+
+todolist过程遇到的问题，input标签的ref属性，写成了id={this.myref??????}
+
+应该是ref = {this.myref}
+
+以及方法所在的位置。在render里面还是外面
+
+
+
+还有一些数组的方法
+
 
 
 
@@ -149,3 +205,17 @@ react并不会真正的绑定到每一个具体的元素上，而是采用事件
 react的event对象不是浏览器提供的，而是自己内部构建的。同样具有那些
 
 event.stopPropagatoin,evevt.preventDefault方法
+
+
+
+onClick事件，后面是否加(),如果onClick={()=>this.handle()}
+
+onClick={this.handle}
+
+我们写的时候，不要加小括号，react会自动加小括号执行他。包括箭头函数和上面的这个写法。
+
+意思是react先执行一下，然后，点击后，执行函数体内的逻辑
+
+#### 条件渲染
+
+有条件的情况下创建，没有条件的情况下移除，做到节点，动态的创建和删除。

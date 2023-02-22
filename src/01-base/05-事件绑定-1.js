@@ -15,8 +15,10 @@ export default class APP extends Component {
         </button>
         <button onClick={this.handleonclick}>add2</button>
         <button onClick={this.handleonclick1}>add3</button>
+        {/* this.handleonclick1  这个就是执行函数 */}
         <button
           onClick={() => {
+            //这个箭头函数是一个匿名函数  将匿名的箭头函数执行
             this.handleonclick1();
           }}
         >
