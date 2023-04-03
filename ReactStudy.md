@@ -189,6 +189,21 @@ todolist过程遇到的问题，input标签的ref属性，写成了id={this.myre
 还有一些数组的方法
 
 
+#### 卖座选项卡，
+#### 卖座选项卡-数据请求
+使用axios第三方进行数据请求
+使用方法：
+1，get:--> axios.get("url").then((res)=>console.log(res)).catch((err)=>console.log(err))
+
+
+axios完整的写法:
+axios({
+  url:'',
+  method:'',
+  headers:{}
+})
+
+
 
 
 
@@ -216,6 +231,10 @@ onClick={this.handle}
 我们写的时候，不要加小括号，react会自动加小括号执行他。包括箭头函数和上面的这个写法。
 
 意思是react先执行一下，然后，点击后，执行函数体内的逻辑
+
+axios请求时，后端配置了access 为*之后  还是会出现跨域问题
+1,查看请求头是否有参数没有传，，  也会造成是说跨域的问题，
+
 
 #### 条件渲染
 

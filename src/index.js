@@ -36,7 +36,7 @@ import ReactDOM from "react-dom/client";
 // import APP from "./01-base/11-dangetouslysetInnerHtml";
 
 // 卖座选项卡
-import APP from './01-base/12-卖座选项卡'
+import APP from "./01-base/12-卖座选项卡";
 
 //这里是17.0.2 的写法
 // ReactDOM.render( < div > dom元素 < /div>,document.getElementById('root'))
