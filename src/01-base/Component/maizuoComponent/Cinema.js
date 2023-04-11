@@ -44,9 +44,17 @@ export default class Cinema extends Component {
 
   // 生命周期中进行ajax请求   react中推荐axios请求数据 ，第三方库
 
+  //类组件中的，这种写法，  方法的调用和创建
+  //标签中的onInput 实现监听，，，，所以 不用ref实现也行
+  changeInput(event) {
+    console.log("input", event.target.value);
+  }
+
   render() {
     return (
       <div>
+        <input onInput={this.changeInput} />
+
         {this.state.CinemaList.map((item) => (
           <dl key={item.cinemaId}>
             <dt> {item.name}</dt>
