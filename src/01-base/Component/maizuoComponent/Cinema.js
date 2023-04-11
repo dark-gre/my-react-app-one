@@ -1,10 +1,19 @@
 import React, { Component } from "react";
+
+//引入css的方法
+import "../../css/02-maizuo.css";
+
 import axios from "axios";
 
 export default class Cinema extends Component {
   //构造器函数
   constructor() {
     super();
+
+    this.state = {
+      CinemaList: [],
+    };
+    //这种就是一个变量的写法
 
     // 请求数据
     // axios
@@ -23,7 +32,10 @@ export default class Cinema extends Component {
     })
       .then((res) => {
         console.log(res);
-        console.log(res.data);
+        console.log(res.data.data.cinemas);
+        this.setState({
+          CinemaList: res.data.data.cinemas,
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -33,6 +45,15 @@ export default class Cinema extends Component {
   // 生命周期中进行ajax请求   react中推荐axios请求数据 ，第三方库
 
   render() {
-    return <div>Cinma组件</div>;
+    return (
+      <div>
+        {this.state.CinemaList.map((item) => (
+          <dl key={item.cinemaId}>
+            <dt> {item.name}</dt>
+            <dd>{item.address}</dd>
+          </dl>
+        ))}
+      </div>
+    );
   }
 }
