@@ -5,7 +5,13 @@ React基础		React Hooks		React 路由		Redux		dva+umi
   
 
 ## React基础
+react版本官方脚手架是 ^18.2.0版本
 
+npm降低版本后是 ^17.0.2 版本
+
+方法：npm i react-dom@17.0.2 --legacy-peer-deps
+
+npm i react@17.0.2 --legacy-peer-deps 
 ### 1、React基础：
 
 #### react特性：
@@ -32,7 +38,7 @@ node.js环境  node环境安装完成后，拥有npm命令
 
 
 全局安装create-react-app  脚手架  （快速创建hello world应用）
-
+****
 npm install -g create-react-app
 
 ![image-20230217100125634](C:\Users\codvision\AppData\Roaming\Typora\typora-user-images\image-20230217100125634.png)
@@ -62,7 +68,7 @@ nrm切换镜像源比较方便
 #### 类组件
 
 ![image-20230217140527968](C:\Users\codvision\AppData\Roaming\Typora\typora-user-images\image-20230217140527968.png)
-
+****
 #### 函数式组件
 
 ![image-20230217140546698](C:\Users\codvision\AppData\Roaming\Typora\typora-user-images\image-20230217140546698.png)
@@ -203,10 +209,27 @@ axios({
   headers:{}
 })
 
+#### 授控组件以及非受控组件
+23集中提出，input框，使用的是onInput方法监听的输入框的变化，不受react控制，使用的是原生的event属性。所以这个不是授控的。
 
+如果input的value值随着状态的改变而改变，我们能够掌控的时候，就成为了受控组件。（通过状态的方式）
 
+#### setSate的同步异步情况(在react18版本后不存在这个问题)
+- 在axios请求后的then中使用setState方法改变状态的时候，log出来的结果是同步更新的，（是因为setState整个都在.then这个异步中）
 
+- 在普通的方法中使用setSate改变状态的时候，log状态不会同步更新。他们是处在同步环境中。这是setState存在的异步问题。
 
+连续进行this.setState()方法改变变量，查看count渲染情况( *** 经典面试题 -- 13-setState同步异步)
+
+setState异步更新状态，更新dom，(宏任务 )
+
+- setState处在同步的逻辑中，异步更新状态，更新真实dom
+- setState处在异步的逻辑中，同步更新状态，同步更新真实dom
+- setState接收第二个参数，是一个回调函数，状态和dom更新完毕（回调函数）就会被触发。(立即执行函数?)
+
+状态更新完毕，也就意味着真实dom也更新完毕
+
+异步中，setState会进行合并，执行最后一个setState。
 
 
 # React可能会问的问题：
@@ -239,3 +262,9 @@ axios请求时，后端配置了access 为*之后  还是会出现跨域问题
 #### 条件渲染
 
 有条件的情况下创建，没有条件的情况下移除，做到节点，动态的创建和删除。
+
+
+
+# 一些快捷键：
+
+- rcc 快速创建类组件

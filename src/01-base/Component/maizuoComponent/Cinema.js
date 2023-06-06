@@ -12,6 +12,7 @@ export default class Cinema extends Component {
 
     this.state = {
       CinemaList: [],
+      bakCinemaList: [],
     };
     //这种就是一个变量的写法
 
@@ -35,6 +36,7 @@ export default class Cinema extends Component {
         console.log(res.data.data.cinemas);
         this.setState({
           CinemaList: res.data.data.cinemas,
+          bakCinemaList: res.data.data.cinemas,
         });
       })
       .catch((err) => {
@@ -46,15 +48,29 @@ export default class Cinema extends Component {
 
   //类组件中的，这种写法，  方法的调用和创建
   //标签中的onInput 实现监听，，，，所以 不用ref实现也行
-  changeInput(event) {
+  // changeInput(event) {   使用箭头函数的原因是，防止this指向的问题
+  changeInput = (event) => {
     console.log("input", event.target.value);
-  }
+    let newlist = this.state.bakCinemaList.filter(
+      (item) =>
+        item.name.toUpperCase().includes(event.target.value.toUpperCase()) ||
+        item.address.toUpperCase().includes(event.target.value.toUpperCase())
+    );
+
+    this.setState({
+      CinemaList: newlist,
+    });
+
+    console.log("newlist", newlist);
+  };
 
   render() {
     return (
       <div>
+        {/* oninput 主演是为了监听他的值的改变 */}
         <input onInput={this.changeInput} />
 
+        {/* 为什么清空的时候，他就自动渲染的原来的列表 */}
         {this.state.CinemaList.map((item) => (
           <dl key={item.cinemaId}>
             <dt> {item.name}</dt>
@@ -65,3 +81,13 @@ export default class Cinema extends Component {
     );
   }
 }
+
+/* 
+fillter的过滤方法   filter不影响原数组
+ */
+// var arr = ["aaa", "abc", "ccc"];
+// const timer = arr.filter((item) => item.includes("a"));
+// // 整个filter会返回一个结果值
+// console.log("timer", timer);
+
+// splice,pop,等会修改原数组`

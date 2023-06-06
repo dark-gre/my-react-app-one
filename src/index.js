@@ -2,8 +2,10 @@
 import React from "react";
 //旧版本引入react-dom
 // import ReactDOM from 'react-dom'
-//新版本
-import ReactDOM from "react-dom/client";
+//新版本  18版本
+// import ReactDOM from "react-dom/client";
+//17版本
+import ReactDOM from "react-dom";
 
 //引入组件类组件
 // import  APP from './01-base/01-class组件'
@@ -36,17 +38,30 @@ import ReactDOM from "react-dom/client";
 // import APP from "./01-base/11-dangetouslysetInnerHtml";
 
 // 卖座选项卡
-import APP from "./01-base/12-卖座选项卡";
+// import APP from "./01-base/12-卖座选项卡";
+
+//setState卖座选项卡
+import APP from "./01-base/13-setState同步异步";
 
 //这里是17.0.2 的写法
-// ReactDOM.render( < div > dom元素 < /div>,document.getElementById('root'))
-// 新版本18.2写法
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  // <React.StrictMode>
-  <APP />
-  // </React.StrictMode>
+// ReactDOM.render(
+// < div > dom元素 < /div>
+// ,document.getElementById('root'))
+//为什么还得重新写一边才对，之前在为什么不对，难道是格式化的插件有问题？
+ReactDOM.render(
+  <div>
+    <APP />
+  </div>,
+  document.getElementById("root")
 );
+
+// 新版本18.2写法
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   // <React.StrictMode>
+//   <APP />
+//   // </React.StrictMode>
+// );
 
 //StrictMode    严格模式下
 
