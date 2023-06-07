@@ -41,7 +41,17 @@ import ReactDOM from "react-dom";
 // import APP from "./01-base/12-卖座选项卡";
 
 //setState卖座选项卡
-import APP from "./01-base/13-setState同步异步";
+// import APP from "./01-base/13-setState同步异步";
+
+//betterScroll  列表做适配
+// import APP from "./01-base/14-betterScroll";
+//结合cinema-better-scroll
+// import APP from "./01-base/15-better-scroll-cinema";
+// 属性，组件复用  props
+// import APP from "./01-base/16-props";
+
+//函数式组件，props属性
+import APP from "./01-base/17-props函数式组件";
 
 //这里是17.0.2 的写法
 // ReactDOM.render(

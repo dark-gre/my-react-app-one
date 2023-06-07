@@ -156,13 +156,13 @@ age :2
 
 })
 
-#### 渲染循环key值问题
+##### 渲染循环key值问题
 
 key=id，提高性能，用于虚拟dom时
 
 
 
-#### todolist
+##### todolist
 
 有关...扩展运算符问题，深拷贝有局限性，只能拷贝一层，以及.slice().content也是同样能实现一层深拷贝，有局限性
 
@@ -195,8 +195,8 @@ todolist过程遇到的问题，input标签的ref属性，写成了id={this.myre
 还有一些数组的方法
 
 
-#### 卖座选项卡，
-#### 卖座选项卡-数据请求
+##### 卖座选项卡，
+##### 卖座选项卡-数据请求
 使用axios第三方进行数据请求
 使用方法：
 1，get:--> axios.get("url").then((res)=>console.log(res)).catch((err)=>console.log(err))
@@ -231,10 +231,108 @@ setState异步更新状态，更新dom，(宏任务 )
 
 异步中，setState会进行合并，执行最后一个setState。
 
+官方中解释：setState在更新过程中并不保证是同步的。
+
+#### betterScroll渲染列表的库，、
+list在遍历的时候，map箭头函数后面需要把{}去掉才能够正常渲染
+
+npm i yarn  安装yarn包，npm有时候装包的时候出错。
+
+ yarn i better-scroll
+
+ 引入后   new 关键字使用
+
+ 具体在01base-14文件中
+
+ 配合cinema组件进行滚动列表，使用这个，并且验证了之前的useState的异步同步的情况
+
+
+#### 组件的属性 props
+
+state状态只能自己组件用，其他组件访问不到。当需要其他组件访问这个组件里面的状态时，需要用到props
+
+实现组件复用的时候
+
+属性是父组件传来的
+
+
+以key=value的形式使用在组件中，通过this.props获取 
+
+<Navibar title="111" leftshow="false" />  一般情况下是传递字符串
+
+如果需要传递boolean或者对象等，用{}包住内容
+
+所以存在验证问题，可以进行验证是否传递的类型正确。
+
+需要引入prop-types 这个模块
+import LiuPropTypes from 'prop-types'
+
+类属性  16-props
+
+使用的时候，zujain.propTypes={
+  属性：LiuPropTypes.string
+  属性：LiuPropTypes.boolean
+}
+
+
+类属性和对象属性的区别
+
+class Test{
+  a:1
+
+  static a = 100   静态属性（也就是类属性 ）  和下面Test.a效果一样
+}
+
+
+Test.a = 100    这就是类属性、（可以写成上面的static）的形式
+
+let nest = new Test
+
+nest.a  这个就是类属性
+
+##### 如果这个组件不传 定义过类型的key 会发生什么、
+
+添加默认属性
+
+Navbar.defaultProps = {
+  leftshow:true
+}
+
+也就是  放在class中
+
+static defaultProps = {
+   leftshow:true
+}
+
+
+#### props函数式组件中的属性
+
+函数式组件是从最开始就支持的。    rfc   rcc
+
+函数式组件中是没有this的
+
+所以需要在函数的参数中设置 props  
+
+内部直接打印props即可得到传递过来的参数
+
+
+函数式组件进行类型检测和类型默认值处理的时候，只能用最原始的方法
+
+Sidebar.propTypes = {}
+
+Sidebar.defaultProps = {}
+
+##### 属性和状态的问题  18-
+
+props父传子  都能够render，是否能够修改、设置子组件的初始值和默认值
+
+子组件内部只能通过setSatet修改状态，父组件没法修改子组件的状态
+ 
+父组件可以设置子组件的属性值。
 
 # React可能会问的问题：
 
-##### react点击事件和原生的点击事件有什么区别：
+#### react点击事件和原生的点击事件有什么区别：
 
 react并不会真正的绑定到每一个具体的元素上，而是采用事件代理的模式。
 
