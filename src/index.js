@@ -51,7 +51,19 @@ import ReactDOM from "react-dom";
 // import APP from "./01-base/16-props";
 
 //函数式组件，props属性
-import APP from "./01-base/17-props函数式组件";
+// import APP from "./01-base/17-props函数式组件";
+
+//状态vs属性
+// import APP from "./01-base/18- 状态vs属性";
+
+//非受控组件
+// import APP from "./01-base/19-非受控组件";
+//受控组件
+// import APP from "./01-base/20-受控组件";
+
+//受控组件-cinema=
+// import APP from "./01-base/21-受控cinema";
+import APP from "./01-base/22-受控todolist";
 
 //这里是17.0.2 的写法
 // ReactDOM.render(
