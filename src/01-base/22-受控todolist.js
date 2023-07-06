@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 export default class APP extends Component {
-  myref = React.createRef();
+  // myref = React.createRef();
 
   state = {
     name: "liming",
@@ -10,13 +10,23 @@ export default class APP extends Component {
       { id: 2, myText: "aaa" },
       { id: 3, myText: "fgg" },
     ],
+    mytext: "",
   };
 
   render() {
     return (
       <div>
         <h1>欢迎回家</h1>
-        <input type="text" ref={this.myref}></input>
+        {/* <input type="text" ref={this.myref}></input> */}
+        <input
+          type="text"
+          onChange={(evt) => {
+            this.setState({
+              mytext: evt.target.value,
+            });
+          }}
+          value={this.state.mytext}
+        ></input>
         <button
           onClick={() => {
             this.handOnclick();
@@ -63,12 +73,17 @@ export default class APP extends Component {
     let newList = [...this.state.list];
     newList.push({
       id: Math.random() * 1000000,
-      myText: this.myref.current.value, //拿到输入框里面的值，进行push操作
+      // myText: this.myref.current.value, //拿到输入框里面的值，进行push操作
+      myText: this.state.mytext, //拿到输入框里面的值，进行push操作
     });
     this.setState({
       list: newList,
     });
-    this.myref.current.value = ""; //这里是value值清空，不是整个ref清空
+    // this.myref.current.value = ""; //这里是value值清空，不是整个ref清空
+
+    this.setState({
+      mytext: " ",
+    }); //这里是value值清空，不是整个ref清空
   };
   handleDelete = (id) => {
     // let newList = [...this.state.list];
