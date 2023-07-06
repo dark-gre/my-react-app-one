@@ -63,9 +63,9 @@ import ReactDOM from "react-dom";
 
 //受控组件-cinema=
 // import APP from "./01-base/21-受控cinema";
-// import APP from "./01-base/22-受控todolist";
+import APP from "./01-base/22-受控todolist";
 
-import APP from "./liuTestSome/防抖节流";
+// import APP from "./liuTestSome/防抖节流";
 
 //这里是17.0.2 的写法
 // ReactDOM.render(

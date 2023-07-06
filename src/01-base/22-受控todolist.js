@@ -6,9 +6,9 @@ export default class APP extends Component {
   state = {
     name: "liming",
     list: [
-      { id: 1, myText: "qqq" },
-      { id: 2, myText: "aaa" },
-      { id: 3, myText: "fgg" },
+      { id: 1, myText: "qqq", ischecked: false },
+      { id: 2, myText: "aaa", ischecked: true },
+      { id: 3, myText: "fgg", ischecked: false },
     ],
     mytext: "",
   };
@@ -44,7 +44,18 @@ export default class APP extends Component {
                 {/* {item.myText} */}
 
                 {/* 富文本片段，用于解析标签什么的 */}
-                <div dangerouslySetInnerHTML={{ __html: item.myText }}></div>
+                <input
+                  type="checkbox"
+                  checked={item.ischecked}
+                  onChange={() => this.handleChecked(index)}
+                />
+                {/* <div dangerouslySetInnerHTML={{ __html: item.myText }}></div>  渲染的方法 这个标签属性 */}
+                <span
+                  dangerouslySetInnerHTML={{ __html: item.myText }}
+                  style={{
+                    textDecoration: item.ischecked ? "line-through" : "",
+                  }}
+                ></span>
 
                 <button
                   onClick={() => {
@@ -68,6 +79,15 @@ export default class APP extends Component {
       </div>
     );
   }
+
+  handleChecked = (index) => {
+    let newList = [...this.state.list];
+    newList[index].ischecked = !newList[index].ischecked;
+
+    this.setState({
+      list: newList,
+    });
+  };
 
   handOnclick = () => {
     let newList = [...this.state.list];
