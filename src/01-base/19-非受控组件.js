@@ -9,7 +9,7 @@ export default class App extends Component {
       <div>
         <h1>登录页</h1>
         {/* <input type="text" ref={this.myusername} />  */}
-        <input type="text" ref={this.myusername} defaultValue='liu' />
+        <input type="text" ref={this.myusername} defaultValue="liu" />
         {/* 如何进行设置默认值，通过defaultValue方法 */}
         <button
           onClick={() => {

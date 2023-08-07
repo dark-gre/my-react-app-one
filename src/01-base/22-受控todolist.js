@@ -95,6 +95,7 @@ export default class APP extends Component {
       id: Math.random() * 1000000,
       // myText: this.myref.current.value, //拿到输入框里面的值，进行push操作
       myText: this.state.mytext, //拿到输入框里面的值，进行push操作
+      ischecked: false,
     });
     this.setState({
       list: newList,
