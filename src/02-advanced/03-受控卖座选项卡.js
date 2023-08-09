@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 
-import Film from "./Component/maizuoComponent/Film";
-import Conter from "./Component/maizuoComponent/Conter";
-import Cinema from "./Component/maizuoComponent/Cinema";
-import Tabbar from "./Component/maizuoComponent/Tabbar";
+import Film from "./maizuoComponent2/Film";
+import Conter from "./maizuoComponent2/Conter";
+import Cinema from "./maizuoComponent2/Cinema";
+import Tabbar from "./maizuoComponent2/Tabbar";
+import Navbar from "./maizuoComponent2/Navbar";
 
 import "./css/02-maizuo.css";
 
@@ -41,15 +42,27 @@ export default class APP extends Component {
   render() {
     return (
       <div>
+        <Navbar
+          myevent={() => {
+            console.log("告诉tabbar去切换到center组件，并高亮");
+            this.setState({
+              current: 2,
+            });
+          }}
+        />
+
         {this.witch()}
 
         {/* 封装一个tabbar组件 */}
         <Tabbar
           myevent={(index) => {
+            //console.log('父组件定义',index)
             this.setState({
               current: index,
             });
           }}
+          current={this.state.current}
+          list={this.state.list}
         ></Tabbar>
       </div>
     );

@@ -67,7 +67,8 @@ import ReactDOM from "react-dom";
 
 //开始第二02文件下的
 // import APP from "./02-advanced/01-子传父";
-import APP from "./02-advanced/02-非受控买左选项卡";
+// import APP from "./02-advanced/02-非受控卖座选项卡";
+import APP from "./02-advanced/03-受控卖座选项卡";
 
 // import APP from "./liuTestSome/防抖节流";
 

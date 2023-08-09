@@ -8,7 +8,7 @@ export default class Tabbar extends Component {
       { id: 2, name: "影院" },
       { id: 3, name: "我的" },
     ],
-    current: 0,
+    current: this.props.defaultValue,
   };
 
   handleOnclick = (index) => {
