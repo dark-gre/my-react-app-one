@@ -70,7 +70,10 @@ import ReactDOM from "react-dom";
 // import APP from "./02-advanced/02-非受控卖座选项卡";
 // import APP from "./02-advanced/03-受控卖座选项卡";
 // import APP from "./02-advanced/04-父子通信-表单域组件";
-import APP from "./02-advanced/05-ref表单域组件";
+// import APP from "./02-advanced/05-ref表单域组件";
+// import APP from "./02-advanced/06-中间人模式";
+// import APP from "./02-advanced/07-发布订阅模式";
+import APP from "./02-advanced/08-发布订阅模式实例";
 
 // import APP from "./liuTestSome/防抖节流";
 

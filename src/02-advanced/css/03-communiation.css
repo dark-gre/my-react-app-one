@@ -1,0 +1,19 @@
+/* 状态提升   中间人通信 */
+.fileitem img {
+  width: 100px;
+  float: left;
+}
+
+.fileitem {
+  overflow: hidden;
+  padding: 10px;
+}
+
+.detail {
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  background-color: aqua;
+}
