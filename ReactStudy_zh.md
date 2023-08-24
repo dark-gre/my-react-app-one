@@ -405,7 +405,20 @@ username = React.createRef()
  注意：需要先注册订阅者。
 
 
+41 context 跨组件传参
+ 
+同一个范围下，有供应商和消费者
 
+所有的供应商和消费者都是由，
+const GlobalContext = React.createContext()，创建出来的一个对象。
+
+GlobalContext.Provider属性。
+消费者使用的时候，需要用GlobalContext.Custome标签包裹，但是里面是一个对象，对象里面是一个函数，并且需要return   
+{
+  (value)=>{
+    return <div></div>
+  }
+}
 
 
 
